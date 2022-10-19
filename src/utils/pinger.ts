@@ -19,12 +19,13 @@ interface LavalinkStatus{
     uptime: number;
 }
 
-interface LavalinkInformation{
+export interface LavalinkInformation{
     alive: boolean;
     error: string | null | undefined;
     ping: number;
     status: LavalinkStatus;
 }
+
 
 export default async function test(host: string, port: number, ssl:boolean, password: string): Promise<LavalinkInformation> {
     const info = {} as LavalinkInformation
@@ -35,7 +36,6 @@ export default async function test(host: string, port: number, ssl:boolean, pass
         }
     )
     const json = await result.json()
-    console.log(json)
     info.alive = json.alive
     info.error = json.error
     info.ping = json.ping

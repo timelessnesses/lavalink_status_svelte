@@ -26,3 +26,8 @@ body {
 #offline_section{
     border: 1px solid red;
 }
+
+#lavalinks{
+    display: inline-grid;
+    column-gap: 50px;
+}

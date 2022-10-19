@@ -3,7 +3,7 @@ interface Information{
     website: string | null;
 }
 
-interface Lavalink{
+export interface Lavalink{
     host: string;
     port: number;
     ssl: boolean;
@@ -20,6 +20,16 @@ const lavalinks: Lavalink[] = [
         information: {
             name: "timelessnesses#9443",
             website: "https://rukchadisa.live"
+        }
+    },
+    {
+        host: "57.128.136.143",
+        port: 30411,
+        ssl: false,
+        password: "maybeiwasboring",
+        information: {
+            name: "MR EXTINCT CODE'S#6646",
+            website: null
         }
     }
 ]
