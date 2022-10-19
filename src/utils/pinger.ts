@@ -29,7 +29,7 @@ interface LavalinkInformation{
 export default async function test(host: string, port: number, ssl:boolean, password: string): Promise<LavalinkInformation> {
     const info = {} as LavalinkInformation
     const result = await fetch(
-        `http://media.api.rukchadisa.live/test?host=${host}&port=${port}&ssl=${ssl}&password=${password}`,
+        `https://media.api.rukchadisa.live/test?host=${host}&port=${port}&ssl=${ssl}&password=${password}`,
         {
             mode: 'cors'
         }
