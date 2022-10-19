@@ -18,3 +18,11 @@ body {
 #offline{
     color: red
 }
+
+#alive_section{
+    border: 1px solid greenyellow;
+}
+
+#offline_section{
+    border: 1px solid red;
+}

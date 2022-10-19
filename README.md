@@ -22,4 +22,9 @@ npx vite dev
 npm install
 ```
 
+## add lavalink servers
+
+edit `src/config.ts`  
+typehint should help you
+
 send balls

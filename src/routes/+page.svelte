@@ -31,8 +31,8 @@ onMount(() => {
             }
             element.innerHTML = `<h3>${lavalink.host}:${lavalink.port} is <span id="${result.alive ?"alive" : "offline"}">${result.alive ?"alive" : "offline"}</span></h3>`
             const section_of_lavalink = document.createElement("section")
-            section_of_lavalink.id = "section_of_lavalink"
-            section_of_lavalink.innerHTML = `<h4>Stats</h4>`
+            section_of_lavalink.id = result.alive ? "alive_section" : "offline_section"
+            section_of_lavalink.innerHTML = `<h4>Stats</h4><br>Ping: ${(result.ping*10000).toFixed(3)}<br>Uptime: ${result.status.uptime}<br>Memory: ${result.status.memory.free} / ${result.status.memory.allocated}<br>Players: ${result.status.players}<br>Playing Players: ${result.status.playing_players}<br>System Load: ${result.status.cpu.system_load}`
             element.appendChild(section_of_lavalink)
         }).catch(function(err){
             console.log(err)
