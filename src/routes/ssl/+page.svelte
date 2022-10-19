@@ -11,7 +11,6 @@
             if (!lavalink.ssl){
                 return
             }
-            console.log(lavalink.host)
             
             const j = test(lavalink.host, lavalink.port, lavalink.ssl, lavalink.password).then(function(result){
                 process_this(result, lavalink, document)

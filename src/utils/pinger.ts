@@ -40,17 +40,19 @@ export default async function test(host: string, port: number, ssl:boolean, pass
     info.error = json.error
     info.ping = json.ping
     info.status = {} as LavalinkStatus
-    info.status.playing_players = json.stats.playingPlayers
     info.status.memory = {} as Memory
-    info.status.memory.reservable = json.stats.memory.reservable
-    info.status.memory.used = json.stats.memory.used
-    info.status.memory.free = json.stats.memory.free
-    info.status.memory.allocated = json.stats.memory.allocated
-    info.status.players = json.stats.players
-    info.status.cpu = {} as CPU
-    info.status.cpu.cores = json.stats.cpu.cores
-    info.status.cpu.system_load = json.stats.cpu.systemLoad
-    info.status.cpu.lavalink_load = json.stats.cpu.lavalinkLoad
-    info.status.uptime = json.stats.uptime
+    if(json.alive){
+        info.status.playing_players = json.stats.playingPlayers
+        info.status.memory.reservable = json.stats.memory.reservable
+        info.status.memory.used = json.stats.memory.used
+        info.status.memory.free = json.stats.memory.free
+        info.status.memory.allocated = json.stats.memory.allocated
+        info.status.players = json.stats.players
+        info.status.cpu = {} as CPU
+        info.status.cpu.cores = json.stats.cpu.cores
+        info.status.cpu.system_load = json.stats.cpu.systemLoad
+        info.status.cpu.lavalink_load = json.stats.cpu.lavalinkLoad
+        info.status.uptime = json.stats.uptime
+    }
     return info
 }

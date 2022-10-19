@@ -10,6 +10,7 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
+    background-color: whitesmoke;
 }
 
 #alive{
@@ -21,13 +22,20 @@ body {
 
 #alive_section{
     border: 1px solid greenyellow;
+    display: grid;
+    column-gap: 50px;
 }
 
 #offline_section{
     border: 1px solid red;
+    display: grid;
+    column-gap: 50px;
 }
 
 #lavalinks{
-    display: inline-grid;
+    display: grid;
     column-gap: 50px;
+    direction: ltr;
 }
+  
+  

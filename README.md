@@ -31,12 +31,19 @@ typehint should help you
 
 this repo use [this back end](https://github.com/timelessnesses/lavalink-tester) (im too lazy to implement my own)  
 so you can edit my api out to yours if you want at `src/utils/pinger.ts` at line 32 from
+
 ```ts
 `http://media.api.rukchadisa.live/test?host=${host}&port=${port}&ssl=${ssl}&password=${password}`,
 ```
-to 
+
+to
+
 ```ts
 `http://ip or domain here/test?host=${host}&port=${port}&ssl=${ssl}&password=${password}`,
 ```
+
+## todo
+
+- need to have bulk test so the server who do test wouldn't die since we just spam them every lavalink in a list and nginx/cf won't be happy about it
 
 send balls

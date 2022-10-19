@@ -1,6 +1,7 @@
 <script lang="ts">
 import * as bootstrap from "../css/bootstrap.css"
 import index_css from "../css/index.css"
+import {onMount} from "svelte"
 
 function redirect_nossl(){
     window.location.href = window.location.href + "nossl"
@@ -19,6 +20,6 @@ function redirect_ssl(){
 
     <h3>
         Please choose a lavalink to monitor between
-        <button id="nossl" class="btn btn-info" on:click={redirect_nossl}>nossl</button>
+        <button id="nossl" class="btn btn-info" on:click={redirect_nossl}>no ssl</button>
         <button id="ssl" class="btn btn-info" on:click={redirect_ssl}>ssl</button>
     </h3>

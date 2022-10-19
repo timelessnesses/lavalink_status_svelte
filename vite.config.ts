@@ -4,7 +4,10 @@ import type { UserConfig } from 'vite';
 const config: UserConfig = {
 	plugins: [sveltekit()],
 	build:{
-		minify: false
+		minify: false,
+		commonjsOptions: {
+			esmExternals: true
+		}
 	}
 };
 

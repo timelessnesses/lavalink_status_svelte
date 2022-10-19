@@ -31,7 +31,18 @@ const lavalinks: Lavalink[] = [
             name: "MR EXTINCT CODE'S#6646",
             website: null
         }
+    },
+    {
+        host: "thisisnotavalidhost.com",
+        port: 80,
+        ssl: false,
+        password: "youshallnotpass",
+        information: {
+            name: "timelessnesses#9443",
+            website: "https://rukchadisa.live"
+        }
     }
+
 ]
 
 export default lavalinks
