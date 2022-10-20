@@ -20,6 +20,8 @@ function redirect_ssl(){
 
     <h3>
         Please choose a lavalink to monitor between
-        <button id="nossl" class="btn btn-info" on:click={redirect_nossl}>no ssl</button>
+        <button id="nossl" class="btn btn-info" on:click={redirect_nossl}>no ssl</button> or 
         <button id="ssl" class="btn btn-info" on:click={redirect_ssl}>ssl</button>
     </h3>
+
+<p><a href="https://github.com/timelessnesses/lavalink_status_svelte">source code</a> and thanks <a href="https://github.com/timelessnesses">timelessnesses</a></p>
