@@ -5,12 +5,12 @@ import * as index_css from "../../../css/index.css"
 import test from "../../../utils/pinger"
 import lavalinks from "../../../config"
 import { onMount } from "svelte"
-import Chart from "chart.js/auto/auto"
+import Chart from "chart.js/auto/auto" // it supposed to be chart.js/auto but rollup is weird asf
 
 onMount(
-    async function(promise){
-        let j = document.getElementById("ping_graph")
-        let ctx = j.getContext("2d")
+    async function(){
+        let j = document.getElementById("ping_graph") as HTMLCanvasElement
+        let ctx = j!.getContext("2d")
         let labels:string[] = []
         let data: number[] = []
         lavalinks.forEach(function(lavalink){
