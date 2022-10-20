@@ -37,4 +37,4 @@
             <br>
             update every 5 seconds or <button type="button" id="pls_reload" class="btn btn-primary">reload</button>
         </p>
-    
+    <p><a href="https://github.com/timelessnesses/lavalink_status_svelte">source code</a> and thanks <a href="https://github.com/timelessnesses">timelessnesses</a></p>
