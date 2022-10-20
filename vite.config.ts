@@ -7,6 +7,9 @@ const config: UserConfig = {
 		minify: false,
 		commonjsOptions: {
 			esmExternals: true
+		},
+		rollupOptions:{
+			external: ['chart.js']
 		}
 	}
 };

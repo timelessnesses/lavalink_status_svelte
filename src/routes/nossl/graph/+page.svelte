@@ -5,7 +5,7 @@ import * as index_css from "../../../css/index.css"
 import test from "../../../utils/pinger"
 import lavalinks from "../../../config"
 import { onMount } from "svelte"
-import Chart from "chart.js/auto"
+import Chart from "chart.js/auto/auto"
 
 onMount(
     async function(promise){
