@@ -12,7 +12,7 @@
                 return
             }
             
-            const j = test(lavalink.host, lavalink.port, lavalink.ssl, lavalink.password).then(function(result){
+            test(lavalink.host, lavalink.port, lavalink.ssl, lavalink.password).then(function(result){
                 process_this(result, lavalink, document)
             }).catch(function(err){
                 console.log(err)
