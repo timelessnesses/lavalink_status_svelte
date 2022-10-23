@@ -30,20 +30,20 @@ typehint should help you
 ## note
 
 this repo use [this back end](https://github.com/timelessnesses/lavalink-tester) (im too lazy to implement my own)  
-so you can edit my api out to yours if you want at `src/utils/pinger.ts` at line 32 from
 
-```ts
-`http://media.api.rukchadisa.live/test?host=${host}&port=${port}&ssl=${ssl}&password=${password}`,
-```
+also noting please also include submodule  
 
-to
+and start the backend with uvicorn or your asgi of your choice  
 
-```ts
-`http://ip or domain here/test?host=${host}&port=${port}&ssl=${ssl}&password=${password}`,
+then config your .env file
+
+```bash
+PUBLIC_PINGER_ENDPOINT=host:port/test_bulk # note you can't use localhost and you need to use your public ip address
+PUBLIC_PING_INTERVAL=amount of second between each ping
 ```
 
 ## todo
 
-- need to have bulk test so the server who do test wouldn't die since we just spam them every lavalink in a list and nginx/cf won't be happy about it
+- none
 
 send balls

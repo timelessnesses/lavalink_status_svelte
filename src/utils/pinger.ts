@@ -1,58 +1,90 @@
+import { type Lavalink } from "../config"
+
 interface Memory{
-    reservable: number;
-    used: number;
-    free: number;
+    reservable: number
+    used: number
+    free: number
     allocated: number
 }
 
 interface CPU{
-    cores: number;
-    system_load: number;
-    lavalink_load: number;
+    cores: number
+    system_load: number
+    lavalink_load: number
 }
 
 interface LavalinkStatus{
-    playing_players: number;
-    memory: Memory;
-    players: number;
-    cpu: CPU;
-    uptime: number;
+    playing_players: number
+    memory: Memory
+    players: number
+    cpu: CPU
+    uptime: number
+}
+
+interface PartialLavalinkInformation{
+    host: string
+    port: number
+    ssl: boolean
+    password: string
 }
 
 export interface LavalinkInformation{
-    alive: boolean;
-    error: string | null | undefined;
-    ping: number;
-    status: LavalinkStatus;
+    alive: boolean
+    error: string | null | undefined
+    ping: number
+    status: LavalinkStatus
+    info: PartialLavalinkInformation
 }
 
 
-export default async function test(host: string, port: number, ssl:boolean, password: string): Promise<LavalinkInformation> {
-    const info = {} as LavalinkInformation
+export default async function test(lavalinks: Lavalink[]): Promise<Array<LavalinkInformation>> {
+    const result_ = [] as LavalinkInformation[]
+    const body = []
+    for (const lavalink of lavalinks) {
+        body.push(
+            {
+                host: lavalink.host,
+                port: lavalink.port,
+                ssl: lavalink.ssl,
+                password: lavalink.password,
+            }
+        )
+    }
+    console.log(JSON.stringify(body))
     const result = await fetch(
-        `https://media.api.rukchadisa.live/test?host=${host}&port=${port}&ssl=${ssl}&password=${password}`,
+        `https://media.api.rukchadisa.live/test_bulk`,
         {
-            mode: 'cors'
+            method: 'POST',
+            body: JSON.stringify(body),
+            headers: {
+                "Content-Type": "application/json",
+                'Accept': 'application/json'
+            }
         }
     )
-    const json = await result.json()
-    info.alive = json.alive
-    info.error = json.error
-    info.ping = json.ping
-    info.status = {} as LavalinkStatus
-    info.status.memory = {} as Memory
-    if(json.alive){
-        info.status.playing_players = json.stats.playingPlayers
-        info.status.memory.reservable = json.stats.memory.reservable
-        info.status.memory.used = json.stats.memory.used
-        info.status.memory.free = json.stats.memory.free
-        info.status.memory.allocated = json.stats.memory.allocated
-        info.status.players = json.stats.players
-        info.status.cpu = {} as CPU
-        info.status.cpu.cores = json.stats.cpu.cores
-        info.status.cpu.system_load = json.stats.cpu.systemLoad
-        info.status.cpu.lavalink_load = json.stats.cpu.lavalinkLoad
-        info.status.uptime = json.stats.uptime
+    const actual_result_list = await result.json()
+    for (const json of actual_result_list) {
+        const info = {} as LavalinkInformation
+        info.alive = json.alive
+        info.error = json.error
+        info.ping = json.ping
+        info.status = {} as LavalinkStatus
+        info.status.memory = {} as Memory
+        info.info = json.stuff
+        if(json.alive){
+            info.status.playing_players = json.stats.playingPlayers
+            info.status.memory.reservable = json.stats.memory.reservable
+            info.status.memory.used = json.stats.memory.used
+            info.status.memory.free = json.stats.memory.free
+            info.status.memory.allocated = json.stats.memory.allocated
+            info.status.players = json.stats.players
+            info.status.cpu = {} as CPU
+            info.status.cpu.cores = json.stats.cpu.cores
+            info.status.cpu.system_load = json.stats.cpu.systemLoad
+            info.status.cpu.lavalink_load = json.stats.cpu.lavalinkLoad
+            info.status.uptime = json.stats.uptime
+        }
+        result_.push(info)
     }
-    return info
+    return result_
 }
