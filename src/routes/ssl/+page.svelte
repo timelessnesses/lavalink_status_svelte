@@ -1,27 +1,27 @@
 <script lang="ts">
     import * as bootstrap from "../../css/bootstrap.css"
     import test from "../../utils/pinger"
-    import lavalinks from "../../config"
+    import lavalinks, {ping_interval} from "../../config"
     import { onMount } from "svelte"
     import * as index_css from "../../css/index.css"
     import process_this from "../../utils/process_this"
     onMount(() => {
         function reload(){
-        lavalinks.forEach(function(lavalink){
-            if (!lavalink.ssl){
-                return
-            }
-            
-            const j = test(lavalink.host, lavalink.port, lavalink.ssl, lavalink.password).then(function(result){
-                process_this(result, lavalink, document)
+            const filtered = lavalinks.filter(lavalink => lavalink.ssl)
+            test(filtered).then(function(result){
+                for (const lavalink of result){
+                    let found = lavalinks.find(l => l.host === lavalink.info.host && l.port === lavalink.info.port)
+                    if(!found){
+                        throw new Error("Lavalink not found")
+                    }
+                    process_this(lavalink, found, document)
+                }
             }).catch(function(err){
                 console.log(err)
-                
             })
-            
-        })
-    }   reload()
-        setInterval(reload, 5000)
+        }   
+        reload()
+        setInterval(reload, ping_interval)
         document.getElementById("pls_reload")!.onclick = reload
     })
     </script>
@@ -35,7 +35,7 @@
         </div>
         <p>
             <br>
-            update every 5 seconds or <button type="button" id="pls_reload" class="btn btn-primary">reload</button>
+            update every {ping_interval / 1000} seconds or <button type="button" id="pls_reload" class="btn btn-primary">reload</button>
         </p>
 <p><a href="https://github.com/timelessnesses/lavalink_status_svelte">source code</a> and thanks <a href="https://github.com/timelessnesses">timelessnesses</a></p>
     

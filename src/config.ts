@@ -1,3 +1,5 @@
+import { env } from "$env/dynamic/public";
+
 interface Information{
     name: string;
     website: string | null;
@@ -321,7 +323,64 @@ const lavalinks: Lavalink[] = [
             name: "Fernandopek21#6236",
             website: "https://discord.gg/SzP9BdFPYF"
         }
+    },
+    {
+        host: "node1.lewdhutao.tech",
+        port : 1183,
+        password : "lewdhutao",
+        ssl: false,
+        information:{
+            name: "LewdHutao",
+            website: "https://lewdhutao.me"
+        }
+    },
+    {
+        host: "node2.lewdhutao.tech",
+        port : 443,
+        password : "lewdhutao",
+        ssl: true,
+        information:{
+            name: "LewdHutao",
+            website: "https://lewdhutao.me"
+        }
+    },
+    {
+        host : "lavalink.snoopee.co.uk",
+        port : 2333,
+        password : "realserver",
+        ssl: false,
+        information:{
+            name: "Snoopee110",
+            website: "https://snoopee.co.uk"
+        }
     }
 ]
+
+let interval = null
+
+try{
+    if(!env.PUBLIC_PING_INTERVAL){
+        console.warn("⚠️PUBLIC_PING_INTERVAL is not set, defaulting to 30 seconds")
+        interval = "30000"
+    }
+    else{
+        interval = env.PUBLIC_PING_INTERVAL
+    }
+}
+catch{
+    console.error("⚠️PUBLIC_PING_INTERVAL is not set, defaulting to 30 seconds")
+    interval = "30000"
+}
+try{
+    if(!env.PUBLIC_PINGER_ENDPOINT){
+        throw new Error("PUBLIC_PINGER_ENDPOINT is not set, this is required for public pinging to work")
+    }
+}
+catch{
+    throw new Error("PUBLIC_PINGER_ENDPOINT is not set, this is required for public pinging to work")
+}
+
+export const endpoint = env.PUBLIC_PINGER_ENDPOINT
+export const ping_interval = parseInt(interval)
 
 export default lavalinks
