@@ -368,8 +368,8 @@ try{
     }
 }
 catch{
-    console.error("⚠️PUBLIC_PING_INTERVAL is not set, defaulting to 30 seconds")
-    interval = "30000"
+    console.error("⚠️PUBLIC_PING_INTERVAL is not set, defaulting to 60 seconds")
+    interval = "60000"
 }
 try{
     if(!env.PUBLIC_PINGER_ENDPOINT){

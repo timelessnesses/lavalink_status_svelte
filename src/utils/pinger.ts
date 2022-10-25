@@ -1,4 +1,4 @@
-import { type Lavalink } from "../config"
+import { type Lavalink, endpoint } from "../config"
 
 interface Memory{
     reservable: number
@@ -50,9 +50,8 @@ export default async function test(lavalinks: Lavalink[]): Promise<Array<Lavalin
             }
         )
     }
-    console.log(JSON.stringify(body))
     const result = await fetch(
-        `https://media.api.rukchadisa.live/test_bulk`,
+        endpoint,
         {
             method: 'POST',
             body: JSON.stringify(body),
@@ -70,7 +69,7 @@ export default async function test(lavalinks: Lavalink[]): Promise<Array<Lavalin
         info.ping = json.ping
         info.status = {} as LavalinkStatus
         info.status.memory = {} as Memory
-        info.info = json.stuff
+        info.info = json.stuff as PartialLavalinkInformation
         if(json.alive){
             info.status.playing_players = json.stats.playingPlayers
             info.status.memory.reservable = json.stats.memory.reservable

@@ -7,7 +7,12 @@
     import process_this from "../../utils/process_this"
     onMount(() => {
         function reload(){
+            document.title = "SSL | Reloading..."
+            document.getElementsByClassName("status")[0].innerHTML = "Status: Reloading Please Wait..."
+            document.getElementById("pls_reload")!.innerHTML = "Reloading..."
+            document.getElementById("pls_reload")!.disabled = true
             const filtered = lavalinks.filter(lavalink => lavalink.ssl)
+            const time = new Date().getTime()
             test(filtered).then(function(result){
                 for (const lavalink of result){
                     let found = lavalinks.find(l => l.host === lavalink.info.host && l.port === lavalink.info.port)
@@ -18,6 +23,12 @@
                 }
             }).catch(function(err){
                 console.log(err)
+            }).finally(function(){
+                document.title = "SSL"
+                document.getElementsByClassName("status")[0]!.innerHTML = "Status: Idle"
+                document.getElementById("pls_reload")!.innerHTML = "Reload"
+                document.getElementById("pls_reload")!.disabled = false
+                console.log("Reloaded in " + (new Date().getTime() - time) + "ms")
             })
         }   
         reload()
@@ -29,6 +40,8 @@
         <h1>
             <a href="/">Lavalink Monitor</a>
             <br>A very nice looking dynamic lavalink status
+            <br><small>SSL</small>
+            <br><h4 id="offline" class="status">Status: Idle</h4>
         </h1>
         <div id="lavalinks">
     

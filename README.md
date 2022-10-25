@@ -39,7 +39,7 @@ then config your .env file
 
 ```bash
 PUBLIC_PINGER_ENDPOINT=host:port/test_bulk # note you can't use localhost and you need to use your public ip address
-PUBLIC_PING_INTERVAL=amount of second between each ping
+PUBLIC_PING_INTERVAL=amount of second between each ping # recommended 60000 milliseconds
 ```
 
 ## todo
