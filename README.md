@@ -1,14 +1,14 @@
 # lavalink_status_page
 
 oh god why am i doing this again  
-
-yes its lavalink status page auto update/client side svelte thingy
+a svelte project that retrieves lavalink information from backend nothing more  
 
 ## build
 
 ```bash
 npx vite build
 ```
+output should be at build folder ready to be hosted  
 
 ## test
 
