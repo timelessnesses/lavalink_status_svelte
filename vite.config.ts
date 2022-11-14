@@ -4,13 +4,14 @@ import type { UserConfig } from 'vite';
 const config: UserConfig = {
 	plugins: [sveltekit()],
 	build:{
-		minify: true,
+		minify: false,
 		commonjsOptions: {
 			esmExternals: true
 		},
 		rollupOptions:{
 			external: ['chart.js']
-		}
+		},
+		sourcemap: true
 	}
 };
 
