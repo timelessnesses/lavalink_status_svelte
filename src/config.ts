@@ -135,16 +135,6 @@ const lavalinks: Lavalink[] = [
         }
     },
     {
-        host: "138.201.56.61",
-        port: 1033,
-        ssl: false,
-        password: "whyareyougay",
-        information:{
-            name:"Scattypie#0001",
-            website:"https://discord.gg/NUhWvA7paX"
-        }
-    },
-    {
         host:"lavalink.hatry4.xyz",
         port: 10424,
         ssl: false,
@@ -235,16 +225,6 @@ const lavalinks: Lavalink[] = [
         }
     },
     {
-        host: "game.cyberdev.host",
-        port: 27005,
-        password: "discord.cyberdev.host",
-        ssl: false,
-        information:{
-            name:"Radiant#1106",
-            website: "https://discord.cyberdev.host/"
-        }
-    },
-    {
         host: "lv.cowcat.cf",
         port: 2333,
         password: "derpylava",
@@ -285,8 +265,8 @@ const lavalinks: Lavalink[] = [
         }
     },
     {
-        host: "musictune.miraclecherrypie.cf",
-        port: 8880,
+        host: "minatoaqua.miraclecherrypie.cf",
+        port: 2052,
         password:"KawaiiOnyanisbetter!!!!",
         ssl: false,
         information:{
@@ -295,18 +275,8 @@ const lavalinks: Lavalink[] = [
         }
     },
     {
-        host: "moe.aikomechawaii.live",
-        port: 5052,
-        password: "aikomechawaii.live",
-        ssl: false,
-        information:{
-            name: "AikoNee#1652",
-            website:"https://github.com/AikoNee"
-        }
-    },
-    {
-        host: "158.69.54.158",
-        port: 31593,
+        host: "57.128.136.143",
+        port: 30191,
         password: "leefernando",
         ssl: false,
         information:{
@@ -317,7 +287,18 @@ const lavalinks: Lavalink[] = [
     {
         host: "57.128.136.144",
         port: 30017,
-        password: "youshallnotpass",
+        password: "leefernando",
+        ssl: false,
+        information:{
+            name: "Fernandopek21#6236",
+            website: "https://discord.gg/SzP9BdFPYF"
+        }
+    },
+    
+    {
+        host: "158.69.54.158",
+        port: 31593,
+        password: "leefernando",
         ssl: false,
         information:{
             name: "Fernandopek21#6236",
@@ -345,15 +326,35 @@ const lavalinks: Lavalink[] = [
         }
     },
     {
-        host : "lavalink.snoopee.co.uk",
-        port : 2333,
-        password : "realserver",
+        host: "purr.aikomechawaii.live",
+        port: 10415,
+        password: "AnythingAsPassword",
         ssl: false,
         information:{
-            name: "Snoopee110",
-            website: "https://snoopee.co.uk"
+            name: "AikoNee#1652",
+            website: "https://github.com/AikoNee"
         }
-    }
+    },
+    {
+        host: "purr.aikomechawaii.live",
+        port: 10357,
+        password: "ImayBeStupid",
+        ssl: false,
+        information:{
+            name: "AikoNee#1652",
+            website: "https://github.com/AikoNee"
+        }
+    },
+    {
+        host: "lavalink.joshsevero.dev",
+        port: 80,
+        password: "oxygen",
+        ssl: false,
+        information:{
+            name: "DIVISION_Solar#2006",
+            website: "https://joshsevero.dev/"
+        }
+    },
 ]
 
 let interval = null
@@ -361,7 +362,7 @@ let interval = null
 try{
     if(!env.PUBLIC_PING_INTERVAL){
         console.warn("⚠️PUBLIC_PING_INTERVAL is not set, defaulting to 30 seconds")
-        interval = "30000"
+        interval = "60000"
     }
     else{
         interval = env.PUBLIC_PING_INTERVAL
