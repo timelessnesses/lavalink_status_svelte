@@ -47,9 +47,6 @@ export default function process_this(result:LavalinkInformation, lavalink:Lavali
     }
     const info = document.createElement("section")
     info.id = "info"
-    if(result.alive){
-        section_of_lavalink.appendChild(info)
-    }
     info.innerHTML = `<h4>Info for ${lavalink.host}</h4>`
     info.innerHTML += `<p>Host: ${lavalink.host}</p>`
     info.innerHTML += `<p>Port: ${lavalink.port}</p>`
