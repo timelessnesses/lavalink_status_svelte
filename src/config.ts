@@ -15,13 +15,13 @@ export interface Lavalink{
 
 const lavalinks: Lavalink[] = [
     {
-        host: "lavalink.api.rukchadisa.live",
+        host: "lavalink.api.timelessnesses.me",
         port: 80,
         ssl: false,
         password: "youshallnotpass",
         information: {
             name: "timelessnesses#9443",
-            website: "https://rukchadisa.live"
+            website: "https://timelessnesses.me"
         }
     },
     {
