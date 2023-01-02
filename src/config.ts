@@ -25,16 +25,6 @@ const lavalinks: Lavalink[] = [
         }
     },
     {
-        host: "57.128.136.143",
-        port: 30411,
-        ssl: false,
-        password: "maybeiwasboring",
-        information: {
-            name: "MR EXTINCT CODE'S#6646",
-            website: null
-        }
-    },
-    {
         host: "lavalink.oops.wtf",
         port: 443,
         ssl: true,
@@ -125,23 +115,13 @@ const lavalinks: Lavalink[] = [
         }
     },
     {
-        host: "lavalink.oops.wtf",
-        port: 2000,
+        host: "nonssl.freelavalink.ga",
+        port: 80,
         ssl: false,
         password: "www.freelavalink.ga",
         information: {
             name: "OGGY#9889",
             website: "https://www.freelavalink.ga/"
-        }
-    },
-    {
-        host:"lavalink.hatry4.xyz",
-        port: 10424,
-        ssl: false,
-        password: "youshallpasslol",
-        information:{
-            name: "Hatry4",
-            website: "https://www.hatry4.xyz/"
         }
     },
     {
@@ -155,27 +135,7 @@ const lavalinks: Lavalink[] = [
         }
     },
     {
-        host: "uk.lavalink.platinumhost.uk",
-        port: 2333,
-        password: "lavalink",
-        ssl: false,
-        information:{
-            name:"ItsLeon15",
-            website:"https://github.com/ItsLeon15"
-        }
-    },
-    {
         host: "lava1.horizxon.studio",
-        port: 80,
-        password: "horizxon.studio",
-        ssl:false,
-        information:{
-            name:"Draxler#6920",
-            website:"https://horizxon.studio"
-        }
-    },
-    {
-        host: "lava2.horizxon.studio",
         port: 80,
         password: "horizxon.studio",
         ssl:false,
@@ -205,16 +165,6 @@ const lavalinks: Lavalink[] = [
         }
     },
     {
-        host: "45.134.11.134",
-        port: 1026,
-        password: "youshallnotpass",
-        ssl: false,
-        information:{
-            name:"invaliduser#9707",
-            website: "https://discord.gg/mTp8suHPaR"
-        }
-    },
-    {
         host: "149.129.215.50",
         port: 2333,
         password: "alfarimusic",
@@ -222,36 +172,6 @@ const lavalinks: Lavalink[] = [
         information:{
             name:"Alfari#3465",
             website: "https://discord.gg/ZNKNY3RpRg"
-        }
-    },
-    {
-        host: "lv.cowcat.cf",
-        port: 2333,
-        password: "derpylava",
-        ssl: false,
-        information:{
-            name:"derpy#1000",
-            website: "https://discord.gg/YHS6nYEPB4"
-        }
-    },
-    {
-        host: "139.162.196.121",
-        port: 1152,
-        password: "rxnationgamingyt",
-        ssl: false,
-        information:{
-            name:"RXNationGaming#2896",
-            website: "https://rxnationgaming.cf/"
-        }
-    },
-    {
-        host: "135.181.140.203",
-        port: 25627,
-        password: "LavaNode2",
-        ssl: false,
-        information:{
-            name:"RXNationGaming#2896",
-            website: "https://rxnationgaming.cf/"
         }
     },
     {
@@ -275,51 +195,10 @@ const lavalinks: Lavalink[] = [
         }
     },
     {
-        host: "57.128.136.143",
-        port: 30191,
-        password: "leefernando",
-        ssl: false,
-        information:{
-            name: "Fernandopek21#6236",
-            website: "https://discord.gg/SzP9BdFPYF"
-        }
-    },
-    {
-        host: "57.128.136.144",
-        port: 30017,
-        password: "leefernando",
-        ssl: false,
-        information:{
-            name: "Fernandopek21#6236",
-            website: "https://discord.gg/SzP9BdFPYF"
-        }
-    },
-    
-    {
-        host: "158.69.54.158",
-        port: 31593,
-        password: "leefernando",
-        ssl: false,
-        information:{
-            name: "Fernandopek21#6236",
-            website: "https://discord.gg/SzP9BdFPYF"
-        }
-    },
-    {
         host: "node1.lewdhutao.tech",
         port : 1183,
         password : "lewdhutao",
         ssl: false,
-        information:{
-            name: "LewdHutao",
-            website: "https://lewdhutao.me"
-        }
-    },
-    {
-        host: "node2.lewdhutao.tech",
-        port : 443,
-        password : "lewdhutao",
-        ssl: true,
         information:{
             name: "LewdHutao",
             website: "https://lewdhutao.me"
@@ -355,7 +234,29 @@ const lavalinks: Lavalink[] = [
             website: "https://joshsevero.dev/"
         }
     },
+    {
+        host: "lavalink.clxud.lol",
+        port: 2333,
+        password: "youshallnotpass",
+        ssl: false,
+        information: {
+            name: "Clxud",
+            website: "https://github.com/cloudwithax"
+        }
+    },
+    {
+        host: "lavalink.invalid-studios.com",
+        port: 2333,
+        password: "invaliduser",
+        ssl: false,
+        information: {
+            name: "Invalid Studios",
+            website: "https://discord.gg/HRB44aTDgA"
+        }
+    }
 ]
+
+// DO NOT EVEN DARE EDIT THIS PART 
 
 let interval = null
 
